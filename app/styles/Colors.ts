@@ -14,6 +14,7 @@ const colors = {
   gray500: "#777777",
   gray400: "#b7b7b7",
   gray300: "#d0d5dd",
+  gray200: "#747d94",
   gray100: "#eaecf0",
   gray50: "#f9fafb",
   disabled: "#c3c3c3",

@@ -7,6 +7,9 @@ import { User } from "../svg/user";
 import { CornerArrowUpLeft } from "../svg/cornerArrowUpLeft";
 import Input from "../Input/Input";
 import MenuItem from "../MenuItem/MenuItem";
+import InputWrapper from "../InputWrapper/InputWrapper";
+import { Search } from "../svg/search";
+import colors from "~/styles/Colors";
 
 type Props = {
   children?: ReactNode | ReactNode[];
@@ -35,7 +38,16 @@ const BaseLayout: FC<Props> = ({ children }) => {
           </MenuItem>
         </Styled.MenuItemContainer>
       </SideNav>
-      <Input></Input>
+      <Styled.SearchContainer>
+        <InputWrapper border="none" height="72px">
+          <Search padding="23.88px 17.88px 22px 28.88px"></Search>
+          <Input
+            placeholder="Busque um agente"
+            placeholderColor={colors.gray200}
+          ></Input>
+        </InputWrapper>
+        <Styled.Divider></Styled.Divider>
+      </Styled.SearchContainer>
     </Styled.BaseLayout>
   );
 };

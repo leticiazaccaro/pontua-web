@@ -7,11 +7,19 @@ type Props = {
   value?: any;
   placeholder?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
-};
+} & Styled.InputProps;
 
-const Input: FC<Props> = ({ type, id, value, placeholder, onChange }) => {
+const Input: FC<Props> = ({
+  type,
+  id,
+  value,
+  placeholder,
+  onChange,
+  ...styleProps
+}) => {
   return (
     <Styled.Input
+      {...styleProps}
       type={type}
       id={id}
       value={value}

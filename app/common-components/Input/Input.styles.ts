@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import colors from "../../styles/Colors";
 
-export const Input = styled.input`
+export type InputProps = {
+  placeholderColor?: string;
+};
+
+export const Input = styled.input<InputProps>`
   width: 100%;
   height: 40px;
   color: ${colors.blue500};
@@ -10,7 +14,8 @@ export const Input = styled.input`
   font-weight: 700;
 
   &::placeholder {
-    color: ${colors.gray400};
+    color: ${({ placeholderColor }) =>
+      placeholderColor ? placeholderColor : colors.gray400};
     font-weight: 400;
     font-size: 14px;
   }
