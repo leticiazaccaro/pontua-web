@@ -47,6 +47,7 @@ const BaseLayout: FC<Props> = ({ children }) => {
           ></Input>
         </InputWrapper>
         <Styled.Divider></Styled.Divider>
+        <Styled.ChildrenContainer>{children}</Styled.ChildrenContainer>
       </Styled.SearchContainer>
     </Styled.BaseLayout>
   );

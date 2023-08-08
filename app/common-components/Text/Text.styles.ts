@@ -14,6 +14,8 @@ export const Title = styled.h1<TextProps>`
   line-height: 2.306rem;
   font-weight: ${({ weight }) => (weight ? weight : 700)};
   width: fit-content;
+  font-family: ${({ fontFamily }) =>
+    fontFamily ? fontFamily : "Epilogue, sans-serif"};
 `;
 
 export const Paragraph = styled.p<TextProps>`
@@ -21,6 +23,9 @@ export const Paragraph = styled.p<TextProps>`
   font-size: ${({ size }) => (size ? size : "1rem")};
   line-height: 1.27rem;
   font-weight: ${({ weight }) => (weight ? weight : 400)};
+  width: fit-content;
+  font-family: ${({ fontFamily }) =>
+    fontFamily ? fontFamily : "Epilogue, sans-serif"};
 `;
 
 export const Span = styled.span<TextProps>`
@@ -28,5 +33,7 @@ export const Span = styled.span<TextProps>`
   font-size: ${({ size }) => (size ? size : "0.688rem")};
   line-height: 0.704rem;
   font-weight: ${({ weight }) => (weight ? weight : 400)};
-  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : "sans-serif")};
+  width: fit-content;
+  font-family: ${({ fontFamily }) =>
+    fontFamily ? fontFamily : "Epilogue, sans-serif"};
 `;
