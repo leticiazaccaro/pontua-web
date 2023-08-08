@@ -2,11 +2,11 @@ import type { FC, ReactNode } from "react";
 import SideNav from "../SideNav/SideNav";
 import { Logo } from "../svg/logo";
 import * as Styled from "./BaseLayout.styles";
-import { MenuItem } from "../MenuItem/MenuItem.styles";
 import { Dashboard } from "../svg/dashboard";
 import { User } from "../svg/user";
 import { CornerArrowUpLeft } from "../svg/cornerArrowUpLeft";
 import Input from "../Input/Input";
+import MenuItem from "../MenuItem/MenuItem";
 
 type Props = {
   children?: ReactNode | ReactNode[];

@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import * as Styled from "./LoginForm.styles";
-import { Input } from "../../common-components/Input/Input.styles";
 import { At } from "../../common-components/svg/at";
 import colors from "~/styles/Colors";
 import { Eye } from "../../common-components/svg/eye";
-import { Button } from "../../common-components/Button/Button.styles";
 import { Enter } from "../../common-components/svg/enter";
 import { TextTypes } from "../../common-components/constants/TextType.enum";
 import Text from "../../common-components/Text/Text";
@@ -12,6 +10,8 @@ import { Interrogation } from "../../common-components/svg/interrogation";
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
 import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 import InputWrapper from "~/common-components/InputWrapper/InputWrapper";
+import Input from "~/common-components/Input/Input";
+import Button from "~/common-components/Button/Button";
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>("");
@@ -58,7 +58,7 @@ const LoginForm = () => {
             id="email"
             placeholder="Informe seu e-mail"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: any) => setEmail(e.target.value)}
           />
           <At color={atIconColor} padding={paddingIcons}></At>
         </InputWrapper>
