@@ -10,6 +10,7 @@ import MenuItem from "../MenuItem/MenuItem";
 import InputWrapper from "../InputWrapper/InputWrapper";
 import { Search } from "../svg/search";
 import colors from "~/styles/Colors";
+import Divider from "../Divider/Divider";
 
 type Props = {
   children?: ReactNode | ReactNode[];
@@ -22,7 +23,7 @@ const BaseLayout: FC<Props> = ({ children }) => {
     <Styled.BaseLayout>
       <SideNav>
         <Logo padding="15px 0 3px 23px" width="104.78px"></Logo>
-        <Styled.Divider></Styled.Divider>
+        <Divider></Divider>
         <Styled.MenuItemContainer>
           <MenuItem active>
             <Dashboard padding={paddingIcons}></Dashboard>Home
@@ -31,7 +32,7 @@ const BaseLayout: FC<Props> = ({ children }) => {
             <User padding={paddingIcons}></User>Perfil
           </MenuItem>
         </Styled.MenuItemContainer>
-        <Styled.Divider></Styled.Divider>
+        <Divider></Divider>
         <Styled.MenuItemContainer paddingTop="15px">
           <MenuItem>
             <CornerArrowUpLeft padding={paddingIcons}></CornerArrowUpLeft>Sair
@@ -46,8 +47,8 @@ const BaseLayout: FC<Props> = ({ children }) => {
             placeholderColor={colors.gray200}
           ></Input>
         </InputWrapper>
-        <Styled.Divider></Styled.Divider>
-        <Styled.ChildrenContainer>{children}</Styled.ChildrenContainer>
+        <Divider></Divider>
+        {children}
       </Styled.SearchContainer>
     </Styled.BaseLayout>
   );
