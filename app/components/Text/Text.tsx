@@ -1,5 +1,3 @@
-// components/LoginForm.tsx
-
 import type { FC, ReactNode } from "react";
 import * as Styled from "./Text.styles";
 import { TextTypes } from "../constants/TextTypes.enum";
