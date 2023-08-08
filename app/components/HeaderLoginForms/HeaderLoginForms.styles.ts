@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import colors from "../../styles/Colors";
 
-export const Title = styled.div`
+export type TitleProps = {
+  marginBottom?: string;
+};
+
+export const Title = styled.div<TitleProps>`
   display: flex;
   align-items: flex-end;
-  margin-bottom: 16px;
+  margin-bottom: ${({ marginBottom }) =>
+    marginBottom ? marginBottom : "16px"};
 `;
 
 export const Point = styled.div`

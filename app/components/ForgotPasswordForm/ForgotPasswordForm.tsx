@@ -13,8 +13,6 @@ const ForgotPasswordForm = () => {
   const [onFocusEmail, setOnFocusEmail] = useState<boolean>(false);
   const [atIconColor, setAtIconColor] = useState<string>(colors.gray400);
 
-  const paddingIcons = "0 0 0 15px";
-
   const handleSubmit = (event: any) => {
     event.preventDefault();
   };
@@ -31,6 +29,7 @@ const ForgotPasswordForm = () => {
         title="Recuperar senha"
         description="Informe o e-mail do seu cadastro. Nós estaremos realizando o envio de um link com as instruções para você redefinir a sua senha."
         simbol={SymbolType.DOT}
+        marginBottom="28px"
       ></HeaderLoginForms>
       <Styled.Form onSubmit={handleSubmit}>
         <Styled.InputWrapper
@@ -45,9 +44,9 @@ const ForgotPasswordForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <At color={atIconColor} padding={paddingIcons}></At>
+          <At color={atIconColor} padding="0 0 0 15px"></At>
         </Styled.InputWrapper>
-        <Button type="submit" margin="0 0 21px 0" disabled={!email}>
+        <Button type="submit" disabled={!email}>
           enviar link
         </Button>
       </Styled.Form>

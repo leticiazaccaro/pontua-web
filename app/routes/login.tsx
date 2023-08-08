@@ -3,8 +3,9 @@ import { Logo } from "~/components/svg/logo";
 import * as Styled from "~/styles/Login.styles";
 import colors from "~/styles/Colors";
 import building from "../assets/png/building.png";
-import LoginForm from "~/components/LoginForm/LoginForm";
-// import ForgotPasswordForm from "~/components/ForgotPasswordForm/ForgotPasswordForm";
+// import LoginForm from "~/components/LoginForm/LoginForm";
+// import SuccessForm from "~/components/SuccessForm/SuccessForm";
+import ForgotPasswordForm from "~/components/ForgotPasswordForm/ForgotPasswordForm";
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Pontua web" }];
@@ -19,7 +20,7 @@ export default function Login() {
       <Styled.Container>
         <Styled.Image src={building}></Styled.Image>
         <Styled.Card>
-          <LoginForm></LoginForm>
+          <ForgotPasswordForm></ForgotPasswordForm>
         </Styled.Card>
       </Styled.Container>
     </Styled.Main>

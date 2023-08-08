@@ -9,12 +9,17 @@ type Props = {
   title: string;
   description: string;
   simbol: SymbolType;
-};
+} & Styled.TitleProps;
 
-const HeaderLoginForms: FC<Props> = ({ title, description, simbol }) => {
+const HeaderLoginForms: FC<Props> = ({
+  title,
+  description,
+  simbol,
+  ...styleProps
+}) => {
   return (
     <>
-      <Styled.Title>
+      <Styled.Title {...styleProps}>
         <Text type={TextTypes.TITLE}>{title}</Text>
         {simbol === SymbolType.DOT ? (
           <Styled.Point></Styled.Point>
