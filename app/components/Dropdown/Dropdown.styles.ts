@@ -35,6 +35,10 @@ export const DropdownButton = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &:focus {
+    border-color: ${colors.blue600};
+  }
 `;
 
 export const DropdownMenu = styled.ul<DropdownProps>`
@@ -55,7 +59,7 @@ export const DropdownMenuItem = styled.li`
   height: 44px;
 
   &:hover {
-    background-color: ${colors.grayBackground};
+    background-color: ${colors.gray50};
   }
 
   &:first-child {
