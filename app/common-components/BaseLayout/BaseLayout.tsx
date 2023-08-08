@@ -6,6 +6,7 @@ import { MenuItem } from "../MenuItem/MenuItem.styles";
 import { Dashboard } from "../svg/dashboard";
 import { User } from "../svg/user";
 import { CornerArrowUpLeft } from "../svg/cornerArrowUpLeft";
+import Input from "../Input/Input";
 
 type Props = {
   children?: ReactNode | ReactNode[];
@@ -34,6 +35,7 @@ const BaseLayout: FC<Props> = ({ children }) => {
           </MenuItem>
         </Styled.MenuItemContainer>
       </SideNav>
+      <Input></Input>
     </Styled.BaseLayout>
   );
 };

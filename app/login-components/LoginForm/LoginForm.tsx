@@ -11,6 +11,7 @@ import Text from "../../common-components/Text/Text";
 import { Interrogation } from "../../common-components/svg/interrogation";
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
 import { SymbolType } from "../../common-components/constants/SymbolType.enum";
+import InputWrapper from "~/common-components/InputWrapper/InputWrapper";
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>("");
@@ -46,10 +47,11 @@ const LoginForm = () => {
         simbol={SymbolType.DOT}
       ></HeaderLoginForms>
       <Styled.Form onSubmit={handleSubmit}>
-        <Styled.InputWrapper
+        <InputWrapper
           onFocus={() => setOnFocusEmail(true)}
           onBlur={() => setOnFocusEmail(false)}
           marginBottom="23px"
+          borderColor={onFocusEmail ? colors.blue500 : colors.gray400}
         >
           <Input
             type="email"
@@ -59,11 +61,12 @@ const LoginForm = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <At color={atIconColor} padding={paddingIcons}></At>
-        </Styled.InputWrapper>
-        <Styled.InputWrapper
+        </InputWrapper>
+        <InputWrapper
           onFocus={() => setOnFocusPassword(true)}
           onBlur={() => setOnFocusPassword(false)}
           marginBottom="11px"
+          borderColor={onFocusPassword ? colors.blue500 : colors.gray400}
         >
           <Input
             type="password"
@@ -73,7 +76,7 @@ const LoginForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Eye color={eyeIconColor} padding={paddingIcons}></Eye>
-        </Styled.InputWrapper>
+        </InputWrapper>
         <Button type="submit" margin="0 0 21px 0">
           entrar <Enter padding="0 0 0 9px"></Enter>
         </Button>
