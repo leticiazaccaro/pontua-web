@@ -11,7 +11,7 @@ const SuccessForm = () => {
         simbol={SymbolType.SMILE}
         marginBottom="28px"
       ></HeaderLoginForms>
-      <Button type="submit" margin="26px 0 0 0">voltar para o login</Button>
+      <Button margin="26px 0 0 0">voltar para o login</Button>
     </>
   );
 };

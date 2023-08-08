@@ -12,6 +12,7 @@ export const Title = styled.h1<TextProps>`
   font-size: ${({ size }) => (size ? size : "2.25rem")};
   line-height: 2.306rem;
   font-weight: ${({ weight }) => (weight ? weight : 700)};
+  width: fit-content;
 `;
 
 export const Paragraph = styled.p<TextProps>`

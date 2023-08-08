@@ -5,7 +5,8 @@ import colors from "~/styles/Colors";
 import building from "../assets/png/building.png";
 // import LoginForm from "~/components/LoginForm/LoginForm";
 // import SuccessForm from "~/components/SuccessForm/SuccessForm";
-import ForgotPasswordForm from "~/components/ForgotPasswordForm/ForgotPasswordForm";
+// import ForgotPasswordForm from "~/components/ForgotPasswordForm/ForgotPasswordForm";
+import SelectHeroForm from "~/components/SelectHeroForm/SelectHeroForm";
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Pontua web" }];
@@ -20,7 +21,7 @@ export default function Login() {
       <Styled.Container>
         <Styled.Image src={building}></Styled.Image>
         <Styled.Card>
-          <ForgotPasswordForm></ForgotPasswordForm>
+          <SelectHeroForm></SelectHeroForm>
         </Styled.Card>
       </Styled.Container>
     </Styled.Main>

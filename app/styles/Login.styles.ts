@@ -23,7 +23,7 @@ export const Image = styled.img`
 `;
 
 export const Card = styled.div`
-  width: 400px;
+  width: 411px;
   height: 433px;
   top: 167px;
   left: 918px;
