@@ -12,6 +12,7 @@ import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 import InputWrapper from "~/common-components/InputWrapper/InputWrapper";
 import Input from "~/common-components/Input/Input";
 import Button from "~/common-components/Button/Button";
+import { useNavigate } from "@remix-run/react";
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>("");
@@ -20,12 +21,14 @@ const LoginForm = () => {
   const [atIconColor, setAtIconColor] = useState<string>(colors.gray400);
   const [onFocusPassword, setOnFocusPassword] = useState<boolean>(false);
   const [eyeIconColor, setEyeIconColor] = useState<string>(colors.gray400);
+  const [emailError, setEmailError] = useState<string>("");
+  const [passwordError, setPasswordError] = useState<string>("");
 
   const paddingIcons = "0 0 0 15px";
-
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-  };
+  const navigate = useNavigate();
+  const emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const passwordRegex: RegExp =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 
   useEffect(() => {
     onFocusEmail
@@ -39,6 +42,38 @@ const LoginForm = () => {
       : setEyeIconColor(colors.gray400);
   }, [onFocusPassword]);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    let isValid = true;
+    let isValidEmail = true;
+    let isValidPassword = true; // senha válida MinhaSenha@123
+
+    if (!email) {
+      setEmailError("O campo de email é obrigatório.");
+      isValid = false;
+    } else if (!emailRegex.test(email)) {
+      setEmailError("O campo de email não está no formato correto.");
+      isValidEmail = emailRegex.test(email);
+    } else {
+      setEmailError("");
+    }
+
+    if (!password) {
+      setPasswordError("O campo de senha é obrigatório.");
+      isValid = false;
+    } else if (!passwordRegex.test(password)) {
+      setPasswordError("O campo de senha não está no formato correto.");
+      isValidPassword = passwordRegex.test(password);
+    } else {
+      setPasswordError("");
+    }
+
+    if (isValid && isValidEmail && isValidPassword) {
+      navigate("/");
+    }
+  };
+
   return (
     <>
       <HeaderLoginForms
@@ -50,7 +85,7 @@ const LoginForm = () => {
         <InputWrapper
           onFocus={() => setOnFocusEmail(true)}
           onBlur={() => setOnFocusEmail(false)}
-          marginBottom="23px"
+          marginBottom="5px"
           borderColor={onFocusEmail ? colors.blue500 : colors.gray400}
         >
           <Input
@@ -62,10 +97,18 @@ const LoginForm = () => {
           />
           <At color={atIconColor} padding={paddingIcons}></At>
         </InputWrapper>
+        <Text
+          type={TextTypes.PARAGRAPH}
+          color={colors.orange400}
+          size="0.688rem"
+          margin="0 0 23px"
+        >
+          {emailError}
+        </Text>
         <InputWrapper
           onFocus={() => setOnFocusPassword(true)}
           onBlur={() => setOnFocusPassword(false)}
-          marginBottom="11px"
+          marginBottom="5px"
           borderColor={onFocusPassword ? colors.blue500 : colors.gray400}
         >
           <Input
@@ -77,6 +120,14 @@ const LoginForm = () => {
           />
           <Eye color={eyeIconColor} padding={paddingIcons}></Eye>
         </InputWrapper>
+        <Text
+          type={TextTypes.PARAGRAPH}
+          color={colors.orange400}
+          size="0.688rem"
+          margin="0 0 11px"
+        >
+          {passwordError}
+        </Text>
         <Button type="submit" margin="0 0 21px 0">
           entrar <Enter padding="0 0 0 9px"></Enter>
         </Button>

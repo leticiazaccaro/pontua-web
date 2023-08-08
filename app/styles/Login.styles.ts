@@ -24,7 +24,7 @@ export const Image = styled.img`
 
 export const Card = styled.div`
   width: 411px;
-  height: 433px;
+  height: fit-content;
   top: 167px;
   left: 918px;
   border-radius: 28px;

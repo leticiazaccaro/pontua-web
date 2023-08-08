@@ -6,6 +6,7 @@ export type TextProps = {
   color?: string;
   size?: string;
   fontFamily?: string;
+  margin?: string;
 };
 
 export const Title = styled.h1<TextProps>`
@@ -16,6 +17,7 @@ export const Title = styled.h1<TextProps>`
   width: fit-content;
   font-family: ${({ fontFamily }) =>
     fontFamily ? fontFamily : "Epilogue, sans-serif"};
+  margin: ${({ margin }) => (margin ? margin : 0)};
 `;
 
 export const Paragraph = styled.p<TextProps>`
@@ -26,6 +28,7 @@ export const Paragraph = styled.p<TextProps>`
   width: fit-content;
   font-family: ${({ fontFamily }) =>
     fontFamily ? fontFamily : "Epilogue, sans-serif"};
+  margin: ${({ margin }) => (margin ? margin : 0)};
 `;
 
 export const Span = styled.span<TextProps>`
@@ -36,4 +39,5 @@ export const Span = styled.span<TextProps>`
   width: fit-content;
   font-family: ${({ fontFamily }) =>
     fontFamily ? fontFamily : "Epilogue, sans-serif"};
+  margin: ${({ margin }) => (margin ? margin : 0)};
 `;
