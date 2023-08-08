@@ -1,12 +1,12 @@
 // components/LoginForm.tsx
 import { useState, useEffect } from "react";
 import * as Styled from "./ForgotPasswordForm.styles";
-import { Input } from "../Input/Input.styles";
-import { At } from "../svg/at";
+import { Input } from "../../common-components/Input/Input.styles";
+import { At } from "../../common-components/svg/at";
 import colors from "~/styles/Colors";
-import { Button } from "../Button/Button.styles";
+import { Button } from "../../common-components/Button/Button.styles";
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
-import { SymbolType } from "../constants/SymbolType.enum";
+import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 
 const ForgotPasswordForm = () => {
   const [email, setEmail] = useState<string>("");

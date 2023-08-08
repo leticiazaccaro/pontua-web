@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import * as Styled from "./LoginForm.styles";
-import { Input } from "../Input/Input.styles";
-import { At } from "../svg/at";
+import { Input } from "../../common-components/Input/Input.styles";
+import { At } from "../../common-components/svg/at";
 import colors from "~/styles/Colors";
-import { Eye } from "../svg/eye";
-import { Button } from "../Button/Button.styles";
-import { Enter } from "../svg/enter";
-import { TextTypes } from "../constants/TextType.enum";
-import Text from "../Text/Text";
-import { Interrogation } from "../svg/interrogation";
+import { Eye } from "../../common-components/svg/eye";
+import { Button } from "../../common-components/Button/Button.styles";
+import { Enter } from "../../common-components/svg/enter";
+import { TextTypes } from "../../common-components/constants/TextType.enum";
+import Text from "../../common-components/Text/Text";
+import { Interrogation } from "../../common-components/svg/interrogation";
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
-import { SymbolType } from "../constants/SymbolType.enum";
+import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>("");

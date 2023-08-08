@@ -2,12 +2,12 @@ import type { FC } from "react";
 import { useState } from "react";
 import * as Styled from "./Dropdown.styles";
 import building from "../../assets/png/building.png";
-import { TextTypes } from "../constants/TextType.enum";
-import Text from "../Text/Text";
+import { TextTypes } from "../../common-components/constants/TextType.enum";
+import Text from "../../common-components/Text/Text";
 import colors from "~/styles/Colors";
-import { DownArrow } from "../svg/downArrow";
-import { User } from "../svg/user";
-import { UpArrow } from "../svg/upArrow";
+import { DownArrow } from "../../common-components/svg/downArrow";
+import { User } from "../../common-components/svg/user";
+import { UpArrow } from "../../common-components/svg/upArrow";
 
 type Props = {
   options: Option[];
@@ -39,7 +39,7 @@ const Dropdown: FC<Props> = ({ options, ...styleProps }) => {
       <Styled.DropdownButton onClick={handleDropdownToggle}>
         <Styled.Option>
           {!selectedOption.value ? (
-            <User padding="5px 8px 0 0"></User>
+            <User color={colors.gray500} padding="5px 8px 0 0"></User>
           ) : (
             <Styled.ImageOption src={building}></Styled.ImageOption>
           )}

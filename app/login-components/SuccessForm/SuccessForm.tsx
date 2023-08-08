@@ -1,6 +1,6 @@
-import { Button } from "../Button/Button.styles";
+import { Button } from "../../common-components/Button/Button.styles";
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
-import { SymbolType } from "../constants/SymbolType.enum";
+import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 
 const SuccessForm = () => {
   return (

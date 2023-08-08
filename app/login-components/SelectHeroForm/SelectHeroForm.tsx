@@ -1,7 +1,7 @@
-import { Button } from "../Button/Button.styles";
+import { Button } from "../../common-components/Button/Button.styles";
 import Dropdown from "../Dropdown/Dropdown";
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
-import { SymbolType } from "../constants/SymbolType.enum";
+import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 
 const SelectHeroForm = () => {
   const options = [

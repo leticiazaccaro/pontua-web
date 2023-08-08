@@ -1,9 +1,9 @@
 // components/LoginForm.tsx
 import * as Styled from "./HeaderLoginForms.styles";
-import { TextTypes } from "../constants/TextType.enum";
-import Text from "../Text/Text";
+import { TextTypes } from "../../common-components/constants/TextType.enum";
+import Text from "../../common-components/Text/Text";
 import type { FC } from "react";
-import { SymbolType } from "../constants/SymbolType.enum";
+import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 
 type Props = {
   title: string;
