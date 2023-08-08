@@ -5,11 +5,23 @@ type Props = {
   children?: ReactNode | ReactNode[];
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & Styled.ButtonProps;
 
-const Button: FC<Props> = ({ children, type, disabled, ...styleProps }) => {
+const Button: FC<Props> = ({
+  children,
+  type,
+  disabled,
+  onClick,
+  ...styleProps
+}) => {
   return (
-    <Styled.Button type={type} disabled={disabled} {...styleProps}>
+    <Styled.Button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      {...styleProps}
+    >
       {children}
     </Styled.Button>
   );

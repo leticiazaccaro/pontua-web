@@ -2,6 +2,7 @@ import Dropdown from "../Dropdown/Dropdown";
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
 import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 import Button from "~/common-components/Button/Button";
+import { useNavigate } from "@remix-run/react";
 
 const SelectHeroForm = () => {
   const options = [
@@ -9,6 +10,12 @@ const SelectHeroForm = () => {
     { label: "Opção 2", value: "option2" },
     { label: "Opção 3", value: "option3" },
   ];
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
 
   return (
     <>
@@ -27,6 +34,7 @@ const SelectHeroForm = () => {
         size="1rem"
         weight={600}
         float="right"
+        onClick={handleClick}
       >
         Entrar
       </Button>

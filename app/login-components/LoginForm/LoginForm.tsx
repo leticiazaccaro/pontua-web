@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import type { FC } from "react";
 import * as Styled from "./LoginForm.styles";
 import { At } from "../../common-components/svg/at";
 import colors from "~/styles/Colors";
@@ -12,9 +13,13 @@ import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 import InputWrapper from "~/common-components/InputWrapper/InputWrapper";
 import Input from "~/common-components/Input/Input";
 import Button from "~/common-components/Button/Button";
-import { useNavigate } from "@remix-run/react";
+import { FormType } from "~/common-components/constants/FormType.enum";
 
-const LoginForm = () => {
+type Props = {
+  setWhichComponentToDisplay?: any;
+};
+
+const LoginForm: FC<Props> = ({ setWhichComponentToDisplay }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [onFocusEmail, setOnFocusEmail] = useState<boolean>(false);
@@ -25,7 +30,6 @@ const LoginForm = () => {
   const [passwordError, setPasswordError] = useState<string>("");
 
   const paddingIcons = "0 0 0 15px";
-  const navigate = useNavigate();
   const emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const passwordRegex: RegExp =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
@@ -41,6 +45,10 @@ const LoginForm = () => {
       ? setEyeIconColor(colors.blue500)
       : setEyeIconColor(colors.gray400);
   }, [onFocusPassword]);
+
+  const handleClick = () => {
+    setWhichComponentToDisplay(FormType.FORGOT_PASSWORD_FORM);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,7 +78,7 @@ const LoginForm = () => {
     }
 
     if (isValid && isValidEmail && isValidPassword) {
-      navigate("/");
+      setWhichComponentToDisplay(FormType.SELECT_HERO_FORM);
     }
   };
 
@@ -133,7 +141,11 @@ const LoginForm = () => {
         </Button>
         <Styled.ForgotPassword>
           <Interrogation padding="0 5.17px 0 0"></Interrogation>
-          <Text type={TextTypes.SPAN} color={colors.orange700}>
+          <Text
+            type={TextTypes.SPAN}
+            color={colors.orange700}
+            onClick={handleClick}
+          >
             Esqueceu a senha?
           </Text>
         </Styled.ForgotPassword>

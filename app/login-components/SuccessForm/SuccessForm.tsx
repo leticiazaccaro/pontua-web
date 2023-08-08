@@ -1,8 +1,18 @@
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
 import { SymbolType } from "../../common-components/constants/SymbolType.enum";
 import Button from "~/common-components/Button/Button";
+import type { FC } from "react";
+import { FormType } from "~/common-components/constants/FormType.enum";
 
-const SuccessForm = () => {
+type Props = {
+  setWhichComponentToDisplay?: any;
+};
+
+const SuccessForm: FC<Props> = ({ setWhichComponentToDisplay }) => {
+  const handleClick = () => {
+    setWhichComponentToDisplay(FormType.LOGIN_FORM);
+  };
+
   return (
     <>
       <HeaderLoginForms
@@ -11,7 +21,9 @@ const SuccessForm = () => {
         simbol={SymbolType.SMILE}
         marginBottom="28px"
       ></HeaderLoginForms>
-      <Button margin="26px 0 0 0">voltar para o login</Button>
+      <Button onClick={handleClick} margin="26px 0 0 0">
+        voltar para o login
+      </Button>
     </>
   );
 };
