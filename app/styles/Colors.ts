@@ -13,6 +13,7 @@ const colors = {
   gray500: "#777777",
   gray400: "#b7b7b7",
   gray100: "#eaecf0",
+  disabled: "#c3c3c3",
 };
 
 export default colors;

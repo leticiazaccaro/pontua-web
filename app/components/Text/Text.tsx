@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from "react";
 import * as Styled from "./Text.styles";
-import { TextTypes } from "../constants/TextTypes.enum";
+import { TextTypes } from "../constants/TextType.enum";
 
 type Props = {
   children?: ReactNode | ReactNode[];

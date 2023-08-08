@@ -6,7 +6,7 @@ export type InputWrapperProps = {
 };
 
 export const Form = styled.form`
-  margin-top: 10px;
+  margin-top: 16px;
 `;
 
 export const InputWrapper = styled.div<InputWrapperProps>`
@@ -18,11 +18,4 @@ export const InputWrapper = styled.div<InputWrapperProps>`
   display: flex;
   align-items: center;
   margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : 0)};
-`;
-
-export const ForgotPassword = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  cursor: pointer;
 `;

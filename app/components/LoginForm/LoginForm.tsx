@@ -7,9 +7,11 @@ import colors from "~/styles/Colors";
 import { Eye } from "../svg/eye";
 import { Button } from "../Button/Button.styles";
 import { Enter } from "../svg/enter";
-import { TextTypes } from "../constants/TextTypes.enum";
+import { TextTypes } from "../constants/TextType.enum";
 import Text from "../Text/Text";
 import { Interrogation } from "../svg/interrogation";
+import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
+import { SymbolType } from "../constants/SymbolType.enum";
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>("");
@@ -38,45 +40,52 @@ const LoginForm = () => {
   }, [onFocusPassword]);
 
   return (
-    <Styled.Form onSubmit={handleSubmit}>
-      <Styled.InputWrapper
-        onFocus={() => setOnFocusEmail(true)}
-        onBlur={() => setOnFocusEmail(false)}
-        marginBottom="23px"
-      >
-        <Input
-          type="email"
-          id="email"
-          placeholder="Informe seu e-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <At color={atIconColor} padding={paddingIcons}></At>
-      </Styled.InputWrapper>
-      <Styled.InputWrapper
-        onFocus={() => setOnFocusPassword(true)}
-        onBlur={() => setOnFocusPassword(false)}
-        marginBottom="11px"
-      >
-        <Input
-          type="password"
-          id="password"
-          placeholder="Informe seu password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Eye color={eyeIconColor} padding={paddingIcons}></Eye>
-      </Styled.InputWrapper>
-      <Button type="submit" margin="0 0 21px 0">
-        entrar <Enter padding="0 0 0 9px"></Enter>
-      </Button>
-      <Styled.ForgotPassword>
-        <Interrogation padding="0 5.17px 0 0"></Interrogation>
-        <Text type={TextTypes.SPAN} color={colors.orange700}>
-          Esqueceu a senha?
-        </Text>
-      </Styled.ForgotPassword>
-    </Styled.Form>
+    <>
+      <HeaderLoginForms
+        title="Bem-vindo"
+        description="informe as suas credenciais de acesso ao portal"
+        simbol={SymbolType.DOT}
+      ></HeaderLoginForms>
+      <Styled.Form onSubmit={handleSubmit}>
+        <Styled.InputWrapper
+          onFocus={() => setOnFocusEmail(true)}
+          onBlur={() => setOnFocusEmail(false)}
+          marginBottom="23px"
+        >
+          <Input
+            type="email"
+            id="email"
+            placeholder="Informe seu e-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <At color={atIconColor} padding={paddingIcons}></At>
+        </Styled.InputWrapper>
+        <Styled.InputWrapper
+          onFocus={() => setOnFocusPassword(true)}
+          onBlur={() => setOnFocusPassword(false)}
+          marginBottom="11px"
+        >
+          <Input
+            type="password"
+            id="password"
+            placeholder="Informe seu password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Eye color={eyeIconColor} padding={paddingIcons}></Eye>
+        </Styled.InputWrapper>
+        <Button type="submit" margin="0 0 21px 0">
+          entrar <Enter padding="0 0 0 9px"></Enter>
+        </Button>
+        <Styled.ForgotPassword>
+          <Interrogation padding="0 5.17px 0 0"></Interrogation>
+          <Text type={TextTypes.SPAN} color={colors.orange700}>
+            Esqueceu a senha?
+          </Text>
+        </Styled.ForgotPassword>
+      </Styled.Form>
+    </>
   );
 };
 
