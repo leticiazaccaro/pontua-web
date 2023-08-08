@@ -6,7 +6,7 @@ export type ButtonProps = {
   width?: string;
   height?: string;
   size?: string;
-  weight?: string;
+  weight?: number;
   radius?: string;
   float?: string;
 };

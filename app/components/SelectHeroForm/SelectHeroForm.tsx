@@ -1,8 +1,15 @@
 import { Button } from "../Button/Button.styles";
+import Dropdown from "../Dropdown/Dropdown";
 import HeaderLoginForms from "../HeaderLoginForms/HeaderLoginForms";
 import { SymbolType } from "../constants/SymbolType.enum";
 
 const SelectHeroForm = () => {
+  const options = [
+    { label: "Opção 1", value: "option1" },
+    { label: "Opção 2", value: "option2" },
+    { label: "Opção 3", value: "option3" },
+  ];
+
   return (
     <>
       <HeaderLoginForms
@@ -11,13 +18,14 @@ const SelectHeroForm = () => {
         simbol={SymbolType.DOT}
         marginBottom="32px"
       ></HeaderLoginForms>
+      <Dropdown options={options} margin="10px 0 0 0"></Dropdown>
       <Button
         margin="16px 0 0 0"
         width="88px"
         height="48px"
         radius="8px"
         size="1rem"
-        weight="600"
+        weight={600}
         float="right"
       >
         Entrar

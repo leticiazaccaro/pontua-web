@@ -2,9 +2,10 @@ import styled from "styled-components";
 import colors from "../../styles/Colors";
 
 export type TextProps = {
-  weight?: string;
+  weight?: number;
   color?: string;
-  size?: number;
+  size?: string;
+  fontFamily?: string;
 };
 
 export const Title = styled.h1<TextProps>`
@@ -27,4 +28,5 @@ export const Span = styled.span<TextProps>`
   font-size: ${({ size }) => (size ? size : "0.688rem")};
   line-height: 0.704rem;
   font-weight: ${({ weight }) => (weight ? weight : 400)};
+  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : "sans-serif")};
 `;

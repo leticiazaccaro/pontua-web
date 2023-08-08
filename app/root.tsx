@@ -27,13 +27,13 @@ export default function App() {
           crossOrigin=""
         ></link>
         <link
-          href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&family=Inter:wght@500&display=swap"
           rel="stylesheet"
         ></link>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <Outlet />
         <ScrollRestoration />
         <GlobalStyle />
