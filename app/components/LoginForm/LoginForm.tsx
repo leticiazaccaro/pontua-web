@@ -12,7 +12,7 @@ import Text from "../Text/Text";
 import { Interrogation } from "../svg/interrogation";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [onFocusEmail, setOnFocusEmail] = useState<boolean>(false);
   const [atIconColor, setAtIconColor] = useState<string>(colors.gray400);
