@@ -16,6 +16,7 @@ type Props = {
 type Option = {
   label: string;
   value: string;
+  thumbnail: any;
 };
 
 const Dropdown: FC<Props> = ({ options, ...styleProps }) => {
@@ -23,7 +24,9 @@ const Dropdown: FC<Props> = ({ options, ...styleProps }) => {
   const [selectedOption, setSelectedOption] = useState<Option>({
     label: "Selecione um agente",
     value: "",
+    thumbnail: <User color={colors.gray500} padding="5px 8px 0 0"></User>
   });
+  
 
   const handleDropdownToggle = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -56,13 +59,13 @@ const Dropdown: FC<Props> = ({ options, ...styleProps }) => {
         {isOpen ? <UpArrow></UpArrow> : <DownArrow></DownArrow>}
       </Styled.DropdownButton>
       <Styled.DropdownMenu open={isOpen}>
-        {options.map((option: Option) => (
+        {options?.map((option: Option) => (
           <Styled.DropdownMenuItem
             key={option.value}
             onClick={() => handleOptionSelect(option)}
           >
             <Styled.Option>
-              <Styled.ImageOption src={building}></Styled.ImageOption>
+              <Styled.ImageOption src={option.thumbnail}></Styled.ImageOption>
               {option.label}
             </Styled.Option>
           </Styled.DropdownMenuItem>
